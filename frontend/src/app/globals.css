@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #12101e;
+  --border: rgba(124, 58, 237, 0.2);
+  --purple: #7c3aed;
+  --indigo: #4f46e5;
+  --glow: #a855f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: #e2e0ff;
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Glass card */
+.glass {
+  background: rgba(18, 16, 30, 0.7);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Purple glow pulse for mic button */
+.glow-ring {
+  box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.6);
+  animation: glow-pulse 2s infinite;
+}
+
+@keyframes glow-pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(168, 85, 247, 0.6); }
+  70%  { box-shadow: 0 0 0 18px rgba(168, 85, 247, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(168, 85, 247, 0); }
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
